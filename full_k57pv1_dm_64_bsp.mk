@@ -16,6 +16,12 @@ MTK_TARGET_PROJECT_FOLDER := $(LOCAL_PATH)
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+#Import NFC tree
+include $(LOCAL_PATH)/nfc_device.mk
+
+#import fingerprint tree
+#include $(LOCAL_PATH)/fingerprint.mk
+
 # set locales & aapt config.
 include $(LOCAL_PATH)/ProjectConfig.mk
 ifneq (,$(filter OP01%, $(OPTR_SPEC_SEG_DEF)))

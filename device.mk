@@ -61,6 +61,10 @@ endif
 # USB OTG
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
+#Magnetometr hal
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/libcalmodule_qmcX983,vendor)
+
 # GPS relative file
 ifeq ($(MTK_GPS_SUPPORT),yes)
   PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml

@@ -1,0 +1,24 @@
+# Fingerprint
+
+
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
+DEVICE_MANIFEST_FILE += device/mediatek/common/project_manifest/manifest_fingerprint.xml
+
+# Fingerprint
+#PRODUCT_PACKAGES += \
+#    fingerprint.mt6757 \
+#    fingerprintd
+
+# Hidl-package
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.0-service-custom
+
+# Copy proprietary blobs
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/finger_blobs/bin/fingerprintd:$(TARGET_COPY_OUT_VENDOR)/bin/fingerprintd \
+     $(LOCAL_PATH)/finger_blobs/bin/gx_fpd:$(TARGET_COPY_OUT_VENDOR)/bin/gx_fpd \
+     $(LOCAL_PATH)/finger_blobs/lib64/hw/fingerprint.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/fingerprint.default.so \
+     $(LOCAL_PATH)/finger_blobs/lib64/hw/gxfingerprint.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/gxfingerprint.default.so \
+     $(LOCAL_PATH)/finger_blobs/lib64/libfpservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfpservice.so \
+     $(LOCAL_PATH)/finger_blobs/lib64/libfp_client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfp_client.so \
+
