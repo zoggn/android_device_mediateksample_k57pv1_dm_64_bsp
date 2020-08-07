@@ -39,7 +39,9 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/thermal.SW4KVR.6757.conf:$(TARGET_COPY_OUT_V
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/thermal.off.conf:$(TARGET_COPY_OUT_VENDOR)/etc/.tp/thermal.off.conf:mtk
 
 
-
+#Magnetometr hal
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,$(LOCAL_PATH)/libcalmodule_qmcX983,vendor)
 
 
 
