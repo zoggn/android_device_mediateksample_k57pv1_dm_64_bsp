@@ -15,6 +15,9 @@ MTK_TARGET_PROJECT_FOLDER := $(LOCAL_PATH)
 #Import NFC tree
 include $(LOCAL_PATH)/nfc_device.mk
 
+#import goodix Fingerprint tree
+include $(LOCAL_PATH)/fingerprint.mk
+
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
